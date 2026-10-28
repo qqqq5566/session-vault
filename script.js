@@ -1,6 +1,6 @@
 /* ===== Waitlist config (FormSubmit). Swap the endpoint here only. ===== */
 var WAITLIST_CONFIG = {
-  endpoint: "https://formsubmit.co/ajax/sendersun912687572@gmail.com",
+  endpoint: "https://formsubmit.co/ajax/689af622845dd2a52a8c609f142a7073",
   subject: "New Session Vault waitlist signup"
 };
 /* ===================================================================== */
