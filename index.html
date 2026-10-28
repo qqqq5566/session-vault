@@ -3,45 +3,139 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Session Vault — Never lose your tabs again</title>
-  <meta name="description" content="Session Vault is a Chrome extension we're building to automatically back up your open tabs and browsing sessions, with local-first storage and version history. Join the waitlist.">
+  <title>Session Vault | Never lose your tabs again</title>
+  <meta name="description" content="Session Vault is a Chrome extension I'm building. It backs up the tabs you have open, with version history and one-click export to a file stored outside your browser. Works alongside OneTab or Session Buddy. Join the waitlist.">
   <meta name="theme-color" content="#0b1020">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Session Vault — Never lose your tabs again">
-  <meta property="og:description" content="A Chrome extension we're building to reliably back up your tabs and sessions. Coming soon — join the waitlist.">
+  <meta property="og:title" content="Session Vault | Never lose your tabs again">
+  <meta property="og:description" content="Back up the tabs you have open and export them in one click to a file outside your browser. A Chrome extension I'm building. Join the waitlist.">
   <meta property="og:url" content="https://qqqq5566.github.io/session-vault/">
   <meta property="og:site_name" content="Session Vault">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Session Vault — Never lose your tabs again">
-  <meta name="twitter:description" content="A Chrome extension we're building to reliably back up your tabs and sessions. Coming soon — join the waitlist.">
+  <meta name="twitter:title" content="Session Vault | Never lose your tabs again">
+  <meta name="twitter:description" content="Back up the tabs you have open and export them in one click to a file outside your browser. A Chrome extension I'm building. Join the waitlist.">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <main>
-  <div class="hero">
+  <header class="site-header">
     <div class="wrap">
-      <header>
       <nav class="nav" aria-label="Main">
-        <a class="brand" href="#"><img src="favicon.svg" alt="" width="28" height="28">Session Vault</a>
+        <a class="brand" href="./"><img src="favicon.svg" alt="" width="28" height="28">Session Vault</a>
         <a class="cta" href="#join">Join the waitlist</a>
       </nav>
-      </header>
-      <div id="top">
-        <span class="badge">Coming soon to Chrome</span>
-        <h1>Never lose your <span class="hl">tabs</span> again.</h1>
-        <p class="sub">Session Vault is a Chrome extension we're building to quietly back up your open tabs and sessions, so an update, crash, or sync hiccup never wipes out your work.</p>
-        <form class="waitlist" data-waitlist aria-label="Join the waitlist">
-          <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true">
-          <div class="form-row">
-            <label for="email-top" class="sr-only">Email address</label>
-            <input id="email-top" type="email" required autocomplete="email" placeholder="you@example.com">
-            <button type="submit">Join the waitlist</button>
-          </div>
-          <p class="privacy">We'll only email you about the Session Vault beta and launch. No spam, never sold. Unsubscribe anytime by replying.</p>
-          <p class="form-success" role="status" tabindex="-1" hidden>You're on the list.<span>We'll email you when there's a beta. Thanks for helping us validate the idea.</span></p>
-        </form>
-      </div>
+    </div>
+  </header>
+
+  <main>
+  <div class="hero" id="top">
+    <div class="wrap">
+      <span class="badge">Coming soon to Chrome</span>
+      <h1>Never lose your <span class="hl">tabs</span> again.</h1>
+      <p class="sub">Back up the tabs you have open, then export them in one click to a file stored outside your browser. Works alongside OneTab or Session Buddy.</p>
+      <p class="sub2">I'm building Session Vault as a quiet safety net. A file on your own disk is still there after a browser update, crash, or sync hiccup. It doesn't replace the tab manager you already use.</p>
+      <form class="waitlist" data-waitlist aria-label="Join the waitlist">
+        <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true">
+        <div class="form-row">
+          <label for="email-top" class="sr-only">Email address</label>
+          <input id="email-top" type="email" required autocomplete="email" placeholder="you@example.com" aria-describedby="note-top">
+          <button type="submit">Join the waitlist</button>
+        </div>
+        <p class="form-error" role="alert"></p>
+        <p class="privacy" id="note-top">I'll only email you about the Session Vault beta and launch. Never sold. Signups are handled by <a href="https://formsubmit.co" rel="noopener">FormSubmit</a>, a third-party form service. <a href="privacy.html">Privacy</a></p>
+        <p class="form-success" role="status" tabindex="-1" hidden>You're on the list.<span>I'll email you when there's a beta. Thanks for helping me validate the idea.</span></p>
+      </form>
+
+      <figure class="diagram">
+        <svg class="diagram-wide" viewBox="0 0 960 300" role="img" aria-labelledby="dg-title dg-desc" xmlns="http://www.w3.org/2000/svg">
+          <title id="dg-title">Concept diagram of how Session Vault is planned to work</title>
+          <desc id="dg-desc">Your open browser windows are saved automatically as a timeline of snapshots in the browser. From the timeline you can restore an earlier snapshot, or export it in one click to a file stored outside the browser.</desc>
+          <defs>
+            <linearGradient id="dg-line" x1="0" x2="1"><stop offset="0" stop-color="#6366f1"/><stop offset="1" stop-color="#22d3ee"/></linearGradient>
+            <marker id="dg-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#6b76a8"/></marker>
+          </defs>
+          <rect x="1" y="1" width="958" height="298" rx="16" fill="#111833" stroke="#26305a"/>
+          <text x="24" y="34" fill="#22d3ee" font-size="12" font-weight="700" letter-spacing="1.5" font-family="system-ui,sans-serif">CONCEPT PREVIEW</text>
+
+          <!-- 1. browser windows -->
+          <g font-family="system-ui,sans-serif">
+            <rect x="40" y="86" width="190" height="120" rx="10" fill="#151d3b" stroke="#26305a"/>
+            <rect x="40" y="86" width="190" height="26" rx="10" fill="#1b2550"/>
+            <rect x="52" y="94" width="44" height="12" rx="4" fill="#6366f1"/><rect x="101" y="94" width="44" height="12" rx="4" fill="#33407a"/><rect x="150" y="94" width="44" height="12" rx="4" fill="#33407a"/>
+            <rect x="56" y="126" width="150" height="8" rx="4" fill="#26305a"/><rect x="56" y="142" width="118" height="8" rx="4" fill="#26305a"/><rect x="56" y="158" width="136" height="8" rx="4" fill="#26305a"/>
+            <rect x="66" y="66" width="190" height="120" rx="10" fill="none" stroke="#26305a" stroke-dasharray="4 4"/>
+            <text x="135" y="236" text-anchor="middle" fill="#e8ebf7" font-size="15" font-weight="600">Your open windows</text>
+            <text x="135" y="256" text-anchor="middle" fill="#a3abc8" font-size="13">tabs, as they are right now</text>
+          </g>
+
+          <path d="M270 146H330" stroke="#6b76a8" stroke-width="2" marker-end="url(#dg-arrow)"/>
+
+          <!-- 2. snapshot timeline -->
+          <g font-family="system-ui,sans-serif">
+            <line x1="352" y1="146" x2="608" y2="146" stroke="url(#dg-line)" stroke-width="4" stroke-linecap="round"/>
+            <circle cx="362" cy="146" r="8" fill="#0b1020" stroke="#6366f1" stroke-width="3"/>
+            <circle cx="440" cy="146" r="8" fill="#0b1020" stroke="#7c83f3" stroke-width="3"/>
+            <circle cx="518" cy="146" r="8" fill="#0b1020" stroke="#3fb0ef" stroke-width="3"/>
+            <circle cx="598" cy="146" r="10" fill="#22d3ee"/>
+            <text x="362" y="124" text-anchor="middle" fill="#a3abc8" font-size="12">earlier</text>
+            <text x="598" y="124" text-anchor="middle" fill="#e8ebf7" font-size="12" font-weight="600">latest</text>
+            <text x="480" y="236" text-anchor="middle" fill="#e8ebf7" font-size="15" font-weight="600">Automatic snapshots</text>
+            <text x="480" y="256" text-anchor="middle" fill="#a3abc8" font-size="13">kept in the browser, with history</text>
+          </g>
+
+          <path d="M630 146L688 106" stroke="#6b76a8" stroke-width="2" marker-end="url(#dg-arrow)"/>
+          <path d="M630 146L688 186" stroke="#6b76a8" stroke-width="2" marker-end="url(#dg-arrow)"/>
+
+          <!-- 3. restore / export -->
+          <g font-family="system-ui,sans-serif">
+            <rect x="700" y="74" width="226" height="60" rx="10" fill="#151d3b" stroke="#6366f1"/>
+            <path d="M722 104a12 12 0 1 0 4-9" fill="none" stroke="#c7d2fe" stroke-width="2.5" stroke-linecap="round"/><path d="M721 90v7h7" fill="none" stroke="#c7d2fe" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <text x="754" y="100" fill="#e8ebf7" font-size="15" font-weight="600">Restore</text>
+            <text x="754" y="119" fill="#a3abc8" font-size="12.5">any earlier snapshot</text>
+            <rect x="700" y="158" width="226" height="60" rx="10" fill="#151d3b" stroke="#22d3ee"/>
+            <path d="M722 172h12l6 6v20h-18z" fill="none" stroke="#a5f3fc" stroke-width="2.5" stroke-linejoin="round"/>
+            <text x="754" y="184" fill="#e8ebf7" font-size="15" font-weight="600">One-click export</text>
+            <text x="754" y="203" fill="#a3abc8" font-size="12.5">to a file on your disk</text>
+          </g>
+        </svg>
+
+        <svg class="diagram-tall" viewBox="0 0 340 520" role="img" aria-labelledby="dgm-title" xmlns="http://www.w3.org/2000/svg">
+          <title id="dgm-title">Concept diagram: open windows are saved as automatic snapshots, which you can restore or export in one click to a file outside the browser</title>
+          <defs>
+            <linearGradient id="dgm-line" x1="0" x2="1"><stop offset="0" stop-color="#6366f1"/><stop offset="1" stop-color="#22d3ee"/></linearGradient>
+            <marker id="dgm-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#6b76a8"/></marker>
+          </defs>
+          <rect x="1" y="1" width="338" height="518" rx="16" fill="#111833" stroke="#26305a"/>
+          <g font-family="system-ui,sans-serif">
+            <text x="20" y="32" fill="#22d3ee" font-size="12" font-weight="700" letter-spacing="1.5">CONCEPT PREVIEW</text>
+            <rect x="85" y="56" width="170" height="96" rx="10" fill="#151d3b" stroke="#26305a"/>
+            <rect x="85" y="56" width="170" height="24" rx="10" fill="#1b2550"/>
+            <rect x="96" y="63" width="40" height="11" rx="4" fill="#6366f1"/><rect x="141" y="63" width="40" height="11" rx="4" fill="#33407a"/><rect x="186" y="63" width="40" height="11" rx="4" fill="#33407a"/>
+            <rect x="100" y="92" width="130" height="8" rx="4" fill="#26305a"/><rect x="100" y="108" width="100" height="8" rx="4" fill="#26305a"/><rect x="100" y="124" width="116" height="8" rx="4" fill="#26305a"/>
+            <text x="170" y="176" text-anchor="middle" fill="#e8ebf7" font-size="15" font-weight="600">Your open windows</text>
+            <path d="M170 190V218" stroke="#6b76a8" stroke-width="2" marker-end="url(#dgm-arrow)"/>
+            <line x1="60" y1="252" x2="280" y2="252" stroke="url(#dgm-line)" stroke-width="4" stroke-linecap="round"/>
+            <circle cx="66" cy="252" r="8" fill="#0b1020" stroke="#6366f1" stroke-width="3"/>
+            <circle cx="136" cy="252" r="8" fill="#0b1020" stroke="#7c83f3" stroke-width="3"/>
+            <circle cx="206" cy="252" r="8" fill="#0b1020" stroke="#3fb0ef" stroke-width="3"/>
+            <circle cx="274" cy="252" r="10" fill="#22d3ee"/>
+            <text x="66" y="236" text-anchor="middle" fill="#a3abc8" font-size="12">earlier</text>
+            <text x="274" y="236" text-anchor="middle" fill="#e8ebf7" font-size="12" font-weight="600">latest</text>
+            <text x="170" y="290" text-anchor="middle" fill="#e8ebf7" font-size="15" font-weight="600">Automatic snapshots</text>
+            <text x="170" y="309" text-anchor="middle" fill="#a3abc8" font-size="13">kept in the browser, with history</text>
+            <path d="M150 324L112 352" stroke="#6b76a8" stroke-width="2" marker-end="url(#dgm-arrow)"/>
+            <path d="M190 324L228 352" stroke="#6b76a8" stroke-width="2" marker-end="url(#dgm-arrow)"/>
+            <rect x="16" y="364" width="148" height="80" rx="10" fill="#151d3b" stroke="#6366f1"/>
+            <text x="90" y="396" text-anchor="middle" fill="#e8ebf7" font-size="15" font-weight="600">Restore</text>
+            <text x="90" y="416" text-anchor="middle" fill="#a3abc8" font-size="12.5">an earlier snapshot</text>
+            <rect x="176" y="364" width="148" height="80" rx="10" fill="#151d3b" stroke="#22d3ee"/>
+            <text x="250" y="396" text-anchor="middle" fill="#e8ebf7" font-size="15" font-weight="600">One-click export</text>
+            <text x="250" y="416" text-anchor="middle" fill="#a3abc8" font-size="12.5">to a file on your disk</text>
+            <text x="170" y="484" text-anchor="middle" fill="#6b76a8" font-size="12">Illustration, not a screenshot</text>
+          </g>
+        </svg>
+        <figcaption>Concept preview. The extension isn't built yet.</figcaption>
+      </figure>
     </div>
   </div>
 
@@ -51,63 +145,93 @@
       <h2 id="problem-title">Saved tabs shouldn't vanish.</h2>
       <p class="lead">If you keep dozens of tabs for research, work, or "read later," you may have run into one of these:</p>
       <div class="grid">
-        <div class="card"><div class="icon" aria-hidden="true">⟳</div><h3>Gone after an update</h3><p>You open your tab manager after an extension or browser update and your saved lists are empty.</p></div>
+        <div class="card"><div class="icon" aria-hidden="true">⟳</div><h3>Gone after an update</h3><p>Browser crashes, disk cleaners or extension updates can wipe locally stored tabs.</p></div>
         <div class="card"><div class="icon" aria-hidden="true">⚡</div><h3>Lost in a crash</h3><p>Chrome crashes or the computer restarts, and weeks of carefully kept tabs don't come back.</p></div>
         <div class="card"><div class="icon" aria-hidden="true">☁</div><h3>Sync glitches</h3><p>A sync conflict or browser reset quietly overwrites your sessions with an older or empty copy.</p></div>
-        <div class="card"><div class="icon" aria-hidden="true">▢</div><h3>The wrong window</h3><p>"Restore" brings back a different window than the one you needed — or only part of it.</p></div>
+        <div class="card"><div class="icon" aria-hidden="true">▢</div><h3>The wrong window</h3><p>"Restore" brings back a different window than the one you needed, or only part of it.</p></div>
       </div>
     </div>
   </section>
 
   <section aria-labelledby="features-title">
     <div class="wrap">
-      <p class="eyebrow">What we're building</p>
+      <p class="eyebrow">What I'm building</p>
       <h2 id="features-title">Planned features</h2>
-      <p class="lead">Session Vault isn't available yet. Here's what we're planning for the first version — honest goals, not promises set in stone.</p>
-      <div class="grid">
-        <div class="card"><div class="icon" aria-hidden="true">⏱</div><h3>Automatic snapshots <span class="tag">Planned</span></h3><p>Your open windows and tabs are saved periodically in the background — no button to remember.</p></div>
+      <p class="lead">Session Vault isn't available yet. Here's what I'm planning for the first version. These are honest goals, not promises set in stone.</p>
+      <div class="grid grid-3">
+        <div class="card"><div class="icon" aria-hidden="true">⬇</div><h3>One-click export <span class="tag">Planned</span></h3><p>Save your sessions as a JSON or HTML file stored outside the browser. If your browser profile is lost or the extension is removed, the file is still there.</p></div>
+        <div class="card"><div class="icon" aria-hidden="true">⏱</div><h3>Automatic snapshots <span class="tag">Planned</span></h3><p>Your open windows and tabs are saved periodically in the background, with no button to remember.</p></div>
         <div class="card"><div class="icon" aria-hidden="true">🔒</div><h3>Local-first storage <span class="tag">Planned</span></h3><p>Backups live on your own device by default, not on someone else's server.</p></div>
         <div class="card"><div class="icon" aria-hidden="true">🕘</div><h3>Version history <span class="tag">Planned</span></h3><p>Browse earlier snapshots and restore any of them, so one bad save can't overwrite everything.</p></div>
-        <div class="card"><div class="icon" aria-hidden="true">⬇</div><h3>One-click export <span class="tag">Planned</span></h3><p>Download your sessions as a JSON or HTML file that you own and can keep anywhere.</p></div>
-        <div class="card"><div class="icon" aria-hidden="true">⇄</div><h3>Import from tab managers <span class="tag">Planned</span></h3><p>Bring in lists you've already saved in other tab managers, so you don't start from scratch.</p></div>
+        <div class="card"><div class="icon" aria-hidden="true">⇄</div><h3>Import exported files <span class="tag">Planned</span></h3><p>Import files exported from other tab managers, so you don't start from scratch.</p></div>
       </div>
     </div>
   </section>
 
-  <section class="alt" aria-labelledby="faq-title">
+  <section class="alt" id="compare" aria-labelledby="compare-title">
+    <div class="wrap">
+      <p class="eyebrow">Already using a tab manager?</p>
+      <h2 id="compare-title">OneTab and Session Buddy already have backups. Why this?</h2>
+      <p class="lead">Session Vault backs up the tabs you currently have open. Like any extension's data, its snapshots live inside the browser, so they can be lost with your profile, an uninstall or a cleanup tool. That's why the core of Session Vault is your backups as files stored outside the browser, exported in one click. If you already use OneTab's or Session Buddy's backups, keep using them. Session Vault isn't meant to replace your tab manager.</p>
+      <div class="compare">
+        <div class="card">
+          <h3>If you use OneTab</h3>
+          <p>OneTab's backup covers tabs you've saved into OneTab, not the windows you currently have open. Its optional Backup &amp; Sync service keeps an end-to-end encrypted cloud backup of those saved tabs. Session Vault would focus on the tabs you still have open, with backups you can keep as files.</p>
+        </div>
+        <div class="card">
+          <h3>If you use Session Buddy</h3>
+          <p>Since version 4.1, Session Buddy automatically keeps local backups of your collections and history inside the browser, and you can also save a backup file by hand. Session Vault is being built around files: one-click exports of your open tabs that you keep outside the browser.</p>
+        </div>
+      </div>
+      <h3 class="compare-sub">What I'm planning for Session Vault</h3>
+      <ul class="checklist">
+        <li><strong>Your backups as files outside the browser:</strong> one-click export to JSON or HTML, kept wherever you like.</li>
+        <li><strong>Automatic snapshots</strong> of your open windows, with no button to remember.</li>
+        <li><strong>Version history:</strong> restore an earlier snapshot, not just the latest one.</li>
+        <li><strong>Local-first:</strong> snapshots stay on your device by default.</li>
+        <li><strong>Works alongside your existing tool.</strong> Nothing to switch or migrate.</li>
+      </ul>
+      <p class="fineprint">A browser extension can't read another extension's storage, so Session Vault won't touch your OneTab or Session Buddy data. It backs up your open tabs on its own, and I plan to let it import files you've exported from other tab managers. Details about other products are based on their official websites as of October 2026. OneTab and Session Buddy are trademarks of their respective owners; Session Vault isn't affiliated with either.</p>
+    </div>
+  </section>
+
+  <section aria-labelledby="faq-title">
     <div class="wrap faq">
       <p class="eyebrow">FAQ</p>
       <h2 id="faq-title">Honest answers</h2>
-      <details><summary>Is it free?</summary><p>We haven't decided pricing yet. Joining the waitlist is free and doesn't commit you to anything.</p></details>
-      <details><summary>When will it be available?</summary><p>We're validating interest first. We'll email you when there's a beta.</p></details>
-      <details><summary>What do you do with my email?</summary><p>We only use it to tell you about the Session Vault beta and launch. We never sell or share it, and you can unsubscribe anytime by replying to any email.</p></details>
-      <details><summary>Which browsers will it support?</summary><p>We're starting with Chrome. Other browsers may come later depending on interest.</p></details>
+      <details><summary>Is it free?</summary><p>I haven't decided pricing yet. Joining the waitlist is free and doesn't commit you to anything.</p></details>
+      <details><summary>When will it be available?</summary><p>I'm validating interest first. I'll email you when there's a beta.</p></details>
+      <details><summary>Do I have to stop using my current tab manager?</summary><p>No. Session Vault is designed to run alongside OneTab, Session Buddy, or whatever you use today, as an extra backup.</p></details>
+      <details><summary>Can it back up my OneTab or Session Buddy data directly?</summary><p>No. Chrome doesn't let one extension read another extension's storage. Session Vault backs up the tabs you have open, and I plan to support importing files you've exported from other tab managers.</p></details>
+      <details><summary>What do you do with my email?</summary><p>I only use it to tell you about the Session Vault beta and launch. It's never sold. The form is processed by FormSubmit, a third-party form service. See the <a href="privacy.html">privacy page</a> for details and how to have it deleted.</p></details>
+      <details><summary>Which browsers will it support?</summary><p>I'm starting with Chrome. Other browsers may come later depending on interest.</p></details>
     </div>
   </section>
 
-  <section id="join" class="final" aria-labelledby="join-title">
+  <section id="join" class="final alt" aria-labelledby="join-title">
     <div class="wrap">
       <h2 id="join-title">Want a backup you can trust?</h2>
-      <p class="lead">Join the waitlist and we'll let you know when Session Vault is ready to try.</p>
+      <p class="lead">Join the waitlist and I'll let you know when Session Vault is ready to try.</p>
       <form class="waitlist" data-waitlist aria-label="Join the waitlist">
-          <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true">
-          <div class="form-row">
-            <label for="email-bottom" class="sr-only">Email address</label>
-            <input id="email-bottom" type="email" required autocomplete="email" placeholder="you@example.com">
-            <button type="submit">Join the waitlist</button>
-          </div>
-          <p class="privacy">We'll only email you about the Session Vault beta and launch. No spam, never sold. Unsubscribe anytime by replying.</p>
-          <p class="form-success" role="status" tabindex="-1" hidden>You're on the list.<span>We'll email you when there's a beta. Thanks for helping us validate the idea.</span></p>
-        </form>
+        <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true">
+        <div class="form-row">
+          <label for="email-bottom" class="sr-only">Email address</label>
+          <input id="email-bottom" type="email" required autocomplete="email" placeholder="you@example.com" aria-describedby="note-bottom">
+          <button type="submit">Join the waitlist</button>
+        </div>
+        <p class="form-error" role="alert"></p>
+        <p class="privacy" id="note-bottom">I'll only email you about the Session Vault beta and launch. Never sold. Signups are handled by <a href="https://formsubmit.co" rel="noopener">FormSubmit</a>, a third-party form service. <a href="privacy.html">Privacy</a></p>
+        <p class="form-success" role="status" tabindex="-1" hidden>You're on the list.<span>I'll email you when there's a beta. Thanks for helping me validate the idea.</span></p>
+      </form>
+      <p class="maker">Built by an independent developer. Questions or ideas? <a href="https://github.com/qqqq5566/session-vault/issues" rel="noopener">Open an issue on GitHub</a>.</p>
     </div>
   </section>
-
   </main>
 
   <footer>
     <div class="wrap">
-      <span>© 2026 Session Vault</span>
-      <span>Coming soon to Chrome · Not affiliated with Google</span>
+      <span>© 2026 Session Vault · Built by an independent developer</span>
+      <span><a href="privacy.html">Privacy</a> · <a href="https://github.com/qqqq5566/session-vault/issues" rel="noopener">Contact</a> · Not affiliated with Google</span>
     </div>
   </footer>
 

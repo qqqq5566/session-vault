@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy | Session Vault</title>
+  <meta name="description" content="What the Session Vault waitlist collects, who processes it, and how to have your email deleted.">
+  <meta name="theme-color" content="#0b1020">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <nav class="nav" aria-label="Main">
+        <a class="brand" href="./"><img src="favicon.svg" alt="" width="28" height="28">Session Vault</a>
+        <a class="cta" href="./#join">Join the waitlist</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap doc">
+      <p class="eyebrow">Privacy</p>
+      <h1>Waitlist privacy</h1>
+      <p class="updated">Last updated: October 28, 2026</p>
+      <p>Session Vault is a Chrome extension I'm building as an independent developer. It isn't available yet. This site only runs a waitlist. Here's exactly what happens when you join it.</p>
+
+      <h2>What I collect</h2>
+      <ul>
+        <li><strong>Your email address</strong>, which you type into the form.</li>
+        <li><strong>The page URL the signup came from</strong> (for example, this site's address), which the form sends along automatically.</li>
+      </ul>
+      <p>That's it. There are no analytics or tracking scripts on this site, and no cookies are set by me.</p>
+
+      <h2>Who processes it</h2>
+      <p>The waitlist form is processed by <a href="https://formsubmit.co" rel="noopener">FormSubmit</a>, a third-party form service. When you submit the form, your email and the page URL are sent to FormSubmit, which forwards the submission to me by email. The email-removal form below works the same way. FormSubmit's own handling of data is described on its website.</p>
+
+      <h2>How I use it</h2>
+      <p>I only use your email to notify you about the Session Vault beta and launch. I never sell it.</p>
+
+      <h2>Deleting your email</h2>
+      <p>To have your email removed, use the form below or reply to any email I send you later. Your request comes privately to me and isn't posted anywhere. I'll delete your address and confirm by email. Please don't post your email address in a GitHub issue, because issues are public.</p>
+      <form class="waitlist removal" data-removal aria-label="Request email removal">
+        <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true">
+        <label for="email-remove" class="removal-label">Email address to remove</label>
+        <div class="form-row">
+          <input id="email-remove" type="email" required autocomplete="email" placeholder="you@example.com" aria-describedby="note-remove">
+          <button type="submit">Request removal</button>
+        </div>
+        <p class="form-error" role="alert"></p>
+        <p class="privacy" id="note-remove">Sent privately to me through <a href="https://formsubmit.co" rel="noopener">FormSubmit</a>, the same form service as the waitlist.</p>
+        <p class="form-success" role="status" tabindex="-1" hidden>Thanks. I'll remove this email and confirm by email.</p>
+      </form>
+      <noscript><p>The form needs JavaScript. You can also reply to any email I send you.</p></noscript>
+
+      <h2>Contact</h2>
+      <p>Questions about this page: <a href="https://github.com/qqqq5566/session-vault/issues" rel="noopener">github.com/qqqq5566/session-vault/issues</a>.</p>
+
+      <p><a href="./">← Back to Session Vault</a></p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>© 2026 Session Vault · Built by an independent developer</span>
+      <span><a href="privacy.html">Privacy</a> · <a href="https://github.com/qqqq5566/session-vault/issues" rel="noopener">Contact</a> · Not affiliated with Google</span>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
