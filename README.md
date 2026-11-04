@@ -4,6 +4,20 @@ Static waitlist landing page for validating interest in **Session Vault**, a pla
 
 No build step: plain HTML + CSS with a tiny vanilla JS file.
 
+## Screenshots
+
+![Desktop hero](docs/screenshots/desktop-hero.png)
+
+Desktop first screen: headline, waitlist form, and concept diagram.
+
+![Desktop features](docs/screenshots/desktop-features.png)
+
+Planned features ("What I'm building"), scrolled into view on desktop.
+
+![Mobile hero](docs/screenshots/mobile-hero.png)
+
+The same first screen on a phone-sized viewport.
+
 ## Files
 - `index.html` — landing page (hero + concept diagram, problem, planned features, "why this if OneTab/Session Buddy already have backups?" comparison, FAQ, waitlist)
 - `privacy.html` — waitlist privacy page (what's collected, FormSubmit, deletion)
